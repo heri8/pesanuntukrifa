@@ -89,9 +89,9 @@
                 }
                 pesan = "Halo Rifa, kenalin nama aku " + nama1 + ". Aku disuruh sama heri buat temenin kamu kemanapun kamu pergi. katanya sih biar kamu ga sendirian kalo pergi-pergian. aku juga bisa temenin kamu berangkat sama pulang kerja kok, temenin kamu bengong waktu di kereta, temenin kamu disaat kamu lg kesel, cape, sedih, ataupun senang. harga aku emang ga seberapa jadi jangan diliat dari harganya ya hehe. oh iya ini aku juga ngajak temen namanya " + nama2 + ". tugas dia sama kaya aku buat temenin kamu juga. kalo kamu lagi kesel atau sedih kamu bisa cerita ke dia kalo si heri nya lagi ga bales pesan kamu. aku juga gatau kenapa si heri ngirimin aku sama temen aku buat temenin kamu, mungkin biar kamu ga kesepian kali ya."
                 document.getElementById('first').innerHTML = pesan;
+                mainkan();
             });
         }
-
 
         function mainkan() {
             var audio = document.getElementById("song");
@@ -113,27 +113,27 @@
             event.preventDefault()
         );
 
-    // document.onkeypress = function (event) {
-    //   event = event || window.event;
-    //   if (event.keyCode == 123) {
-    //     //alert('No F-12');
-    //     return false;
-    //   }
-    // };
-    // document.onmousedown = function (event) {
-    //   event = event || window.event;
-    //   if (event.keyCode == 123) {
-    //     //alert('No F-keys');
-    //     return false;
-    //   }
-    // };
-    // document.onkeydown = function (event) {
-    // event = event || window.event;
-    // if (event.keyCode == 123) {
-    //   //alert('No F-keys');
-    //   return false;
-    // }
-    // };
+        document.onkeypress = function (event) {
+            event = event || window.event;
+            if (event.keyCode == 123) {
+                //alert('No F-12');
+                return false;
+            }
+        };
+        document.onmousedown = function (event) {
+            event = event || window.event;
+            if (event.keyCode == 123) {
+                //alert('No F-keys');
+                return false;
+            }
+        };
+        document.onkeydown = function (event) {
+            event = event || window.event;
+            if (event.keyCode == 123) {
+                //alert('No F-keys');
+                return false;
+            }
+        };
     </script>
 </body>
 
