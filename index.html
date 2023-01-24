@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+  <title>Pesan Untuk Rifa</title>
+</head>
+
+<body>
+  <script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
+  <script>
+
+    swal({
+      title: "Kenalan dulu",
+      text: "Masukkan nama anda: ",
+      input: "text",
+      showCancelButton: true,
+      animation: "slide-from-top",
+      inputPlaceholder: "masukan nama anda"
+    }).then((result) => {
+      if(result.value == "Rifa" || result.value == "rifa") {
+        window.location.href = "home.html";
+      } else {
+        window.location.href = "page404.html";
+      }
+    });
+
+    document.addEventListener("contextmenu", (event) =>
+      event.preventDefault()
+    );
+
+    // document.onkeypress = function (event) {
+    //   event = event || window.event;
+    //   if (event.keyCode == 123) {
+    //     //alert('No F-12');
+    //     return false;
+    //   }
+    // };
+    // document.onmousedown = function (event) {
+    //   event = event || window.event;
+    //   if (event.keyCode == 123) {
+    //     //alert('No F-keys');
+    //     return false;
+    //   }
+    // };
+    // document.onkeydown = function (event) {
+    // event = event || window.event;
+    // if (event.keyCode == 123) {
+    //   //alert('No F-keys');
+    //   return false;
+    // }
+    // };
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+    <title>Pesan Untuk Rifa</title>
+</head>
+
+<body>
+    <audio id="song" loop autoplay>
+        <source src="audio.mp3" type="audio/mpeg">
+        </source>
+        Your browser isn't invited for super fun audio time.
+    </audio>
+
+    <div class="kertas">
+        <h2>Pesan Untuk Rifa</h2>
+        <p id="first">
+            Halo Rifa, kenalin nama aku ... Aku disuruh sama heri buat temenin kamu kemanapun kamu pergi. katanya sih
+            biar kamu ga sendirian kalo pergi-pergian. aku juga bisa temenin kamu berangkat sama pulang kerja kok,
+            temenin kamu bengong waktu di kereta, temenin kamu disaat kamu lg kesel, cape, sedih, ataupun senang. harga
+            aku emang ga seberapa jadi jangan diliat dari harganya ya hehe. oh iya ini aku juga ngajak temen namanya ...
+            tugas dia sama kaya aku buat temenin kamu juga. kalo kamu lagi kesel atau sedih kamu bisa cerita ke dia kalo
+            si heri nya lagi ga bales pesan kamu. aku juga gatau kenapa si heri ngirimin aku sama temen aku buat temenin
+            kamu, mungkin biar kamu ga kesepian kali ya.
+        </p>
+
+        <p>
+            Eh kamu tau ga ? heri tuh kagum sama kamu tau karena kamu perempuan yang kuat, yang bisa hadapin masalahnya
+            sendiri, hadapin temen kerja yang julid, adek yang kasar ke kamu tapi kamu tetep baik ke adek kamu. kamu
+            hebat katanya bisa ngadepin itu semua. tapi sekuat apapun kamu pasti butuh temen cerita ga sih ? butuh orang
+            yang bisa dengerin semua kesedihan kamu, kekesalan kamu, sampai kesenangan kamu. Kamu yakin anggap heri cuma
+            sebatas teman aja ? padahal yang aku tau dia suka loh sama kamu, dia juga sayang sama kamu, dia mau selalu
+            ada buat kamu katanya. tapi heri bilang yang namanya perasaan kan ga bisa dipaksa jadi biarin berjalan apa
+            adanya aja biarin waktu yang jawab.
+        </p>
+
+        <p>
+            Segitu aja dulu ya fa pengelanan aku, kamu suka kamu bisa gantungin aku dimana aja kamu mau, tapi kalo kamu
+            ga suka kamu boleh simpen aku di rumah atau di buang juga gapapa kok hehe.
+        </p>
+
+        <p>
+            <strong>"kita ga bisa kontrol sikap orang terhadap kita, tapi kita bisa kontrol sikap kita terhadap orang
+                lain"</strong> kata Rifa waktu lagi nangis di telpon hehehe
+        </p>
+    </div>
+
+    <script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
+    <script>
+        let pesan;
+        swal({
+            title: "Kenalan",
+            text: "Masukkan nama gantungan kunci 1: ",
+            input: "text",
+            showCancelButton: false,
+            animation: "slide-from-top",
+            inputPlaceholder: "masukan nama"
+        }).then((result) => {
+            if (result.value == "" || result.value == undefined) {
+                nama1 = "Odie";
+            } else {
+                nama1 = result.value;
+            }
+            kedua();
+        });
+
+        function kedua() {
+            console.log(nama1);
+            swal({
+                title: "Kenalan",
+                text: "Masukkan nama gantungan kunci 2: ",
+                input: "text",
+                showCancelButton: false,
+                animation: "slide-from-top",
+                inputPlaceholder: "masukan nama"
+            }).then((result) => {
+                if (result.value == "" || result.value == undefined) {
+                    nama2 = "Lucky";
+                } else {
+                    nama2 = result.value;
+                }
+                pesan = "Halo Rifa, kenalin nama aku " + nama1 + ". Aku disuruh sama heri buat temenin kamu kemanapun kamu pergi. katanya sih biar kamu ga sendirian kalo pergi-pergian. aku juga bisa temenin kamu berangkat sama pulang kerja kok, temenin kamu bengong waktu di kereta, temenin kamu disaat kamu lg kesel, cape, sedih, ataupun senang. harga aku emang ga seberapa jadi jangan diliat dari harganya ya hehe. oh iya ini aku juga ngajak temen namanya " + nama2 + ". tugas dia sama kaya aku buat temenin kamu juga. kalo kamu lagi kesel atau sedih kamu bisa cerita ke dia kalo si heri nya lagi ga bales pesan kamu. aku juga gatau kenapa si heri ngirimin aku sama temen aku buat temenin kamu, mungkin biar kamu ga kesepian kali ya."
+                document.getElementById('first').innerHTML = pesan;
+            });
+        }
+
+
+        function mainkan() {
+            var audio = document.getElementById("song");
+            swal({
+                title: 'Mau sambil dengerin lagu bacanya ?',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Iya',
+                cancelButtonText: 'Tidak',
+            }).then((result) => {
+                if (result.value == true) {
+                    audio.play();
+                }
+            });
+        }
+
+        document.addEventListener("contextmenu", (event) =>
+            event.preventDefault()
+        );
+
+    // document.onkeypress = function (event) {
+    //   event = event || window.event;
+    //   if (event.keyCode == 123) {
+    //     //alert('No F-12');
+    //     return false;
+    //   }
+    // };
+    // document.onmousedown = function (event) {
+    //   event = event || window.event;
+    //   if (event.keyCode == 123) {
+    //     //alert('No F-keys');
+    //     return false;
+    //   }
+    // };
+    // document.onkeydown = function (event) {
+    // event = event || window.event;
+    // if (event.keyCode == 123) {
+    //   //alert('No F-keys');
+    //   return false;
+    // }
+    // };
+    </script>
+</body>
+
+</html>
